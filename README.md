@@ -55,13 +55,13 @@ print(regime["summary"])
 By default the client uses:
 
 ```python
-https://api.thera-os.com/api/v1
+https://api.thera-os.com
 ```
 
 Use another deployment by passing `base_url`:
 
 ```python
-client = TheraOSClient(base_url="http://localhost:8000/api/v1")
+client = TheraOSClient(base_url="http://localhost:8000")
 ```
 
 ## Upload Examples
@@ -98,25 +98,6 @@ except TheraOSAPIError as exc:
     print(exc.status_code)
     print(exc.code)
     print(exc.message)
-```
-
-## Publishing Checklist
-
-1. Create a public GitHub repository, for example `GrandThera/thera-os-python`.
-2. Update the URLs in `pyproject.toml` if the repository name changes.
-3. Confirm no private URLs, credentials, notebooks with secrets, `.venv`, `.git`, caches, or backend internals are committed.
-4. Run:
-
-```bash
-python -m pip install -e ".[dev]"
-pytest
-python -m build
-```
-
-5. Publish when ready:
-
-```bash
-python -m twine upload dist/*
 ```
 
 ## License
