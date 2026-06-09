@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "thera-os"
+version = "0.1.0"
+description = "Python client for the public Grand Thera AIT API."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Grand Thera" }
+]
+keywords = ["grand thera", "thera os", "forecast", "regime", "symbolic regression", "api client"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+  "httpx>=0.27,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8",
+  "ruff>=0.5",
+  "twine>=5",
+]
+
+[project.urls]
+Homepage = "https://github.com/GrandThera/thera-os-python"
+Documentation = "https://api.thera-os.com/docs"
+Source = "https://github.com/GrandThera/thera-os-python"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/thera_os"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
