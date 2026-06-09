@@ -1,4 +1,4 @@
-# thera-os
+# Thera-os SDK
 
 Python client for the public Grand Thera AIT API.
 
