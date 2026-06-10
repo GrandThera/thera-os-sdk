@@ -58,12 +58,6 @@ By default the client uses:
 https://api.thera-os.com
 ```
 
-Use another deployment by passing `base_url`:
-
-```python
-client = TheraOSClient(base_url="http://localhost:8000")
-```
-
 ## Upload Examples
 
 ```python
